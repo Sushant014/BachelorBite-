@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="BachelorBite: homemade meals from verified local home chefs. Ghar jaisa khana, har din.">
+<title>BachelorBite – Ghar Jaisa Khana, Har Din</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--o:#F47B35;--od:#E5672A;--g:#276749;--gl:#E8F4ED;--y:#FFD166;--c:#FFF9F0;--w:#FFFFFF;--k:#252525;--m:#6E6862;--l:#EFE5D8;--sh:0 18px 40px -22px rgba(60,30,10,.35);--a1:#FFE3CC;--a2:#FFF1C2;--sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--serif:'Fraunces',Georgia,'Times New Roman',serif;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--c:#1B1714;--w:#27221E;--k:#F6F1EA;--m:#B9AFA4;--l:#3B342D;--gl:#1F3328;--sh:0 18px 40px -22px #000;--a1:#3A2A1F;--a2:#33301C}}
+:root[data-theme=dark]{--c:#1B1714;--w:#27221E;--k:#F6F1EA;--m:#B9AFA4;--l:#3B342D;--gl:#1F3328;--sh:0 18px 40px -22px #000;--a1:#3A2A1F;--a2:#33301C}
+*{box-sizing:border-box}
+html{scroll-padding-top:96px}
+body{margin:0;min-height:100vh;font:400 15px/1.5 var(--sans);color:var(--k);background:radial-gradient(1100px 520px at 95% -8%,var(--a1),transparent 60%),radial-gradient(900px 420px at -8% 8%,var(--a2),transparent 55%),var(--c)}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--w);z-index:30}
+a{color:inherit}button,input,select,textarea{font:inherit}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--w);border-bottom:1px solid var(--l)}
+.bar{max-width:1200px;margin:auto;padding:12px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font:700 23px var(--serif);text-decoration:none;margin-right:auto;color:var(--k)}
+.brand b{color:var(--o)}
+.logo{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;font-size:19px;background:linear-gradient(135deg,var(--o),var(--y));box-shadow:0 8px 16px -8px var(--o)}
+.ctl{border:1px solid var(--l);background:var(--w);color:var(--k);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.menu{order:3;width:100%;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.menu a{padding:8px 13px;border-radius:99px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;opacity:.8}
+.menu a:hover{background:var(--gl);opacity:1}
+.menu a.on{background:var(--g);color:#fff;opacity:1}
+@media(min-width:960px){.brand{margin-right:14px}.menu{order:0;width:auto;margin-right:auto}}
+main{max-width:1200px;margin:auto;padding:8px 16px 40px}
+section{margin:48px 0}
+.eb{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0}
+h2{font-size:clamp(26px,4vw,38px);margin:8px 0 18px}
+h3{font-size:19px}
+.muted{color:var(--m);font-size:14px}
+.hero{display:grid;gap:30px;align-items:center;margin-top:12px}
+@media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr;margin-top:30px}}
+.hero h1{font-size:clamp(40px,6.4vw,70px);letter-spacing:-.025em;margin:14px 0 16px}
+.hero em{color:var(--o)}
+.lead{font-size:18px;color:var(--m);max-width:34em}
+.find{display:flex;align-items:center;gap:6px;background:var(--w);border:1px solid var(--l);border-radius:99px;padding:6px 6px 6px 16px;box-shadow:var(--sh);margin:24px 0 16px;max-width:560px}
+.find input{flex:1;min-width:0;border:0;background:none;outline:0;color:var(--k);font-size:15px}
+.stats{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap}
+.stats b{display:block;font:700 26px var(--serif)}
+.stats span{font-size:13px;color:var(--m)}
+.visual{position:relative;justify-self:center;width:min(100%,440px);aspect-ratio:1;animation:fl 6s ease-in-out infinite}
+.plate{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#FFF4E8 50%,#F3DCC2);box-shadow:0 40px 60px -30px rgba(120,55,15,.55),inset 0 0 0 16px #fff,inset 0 0 0 18px #F1D9BF}
+.bowl{position:absolute;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:clamp(28px,6vw,44px);box-shadow:inset 0 -8px 0 rgba(0,0,0,.08),0 14px 22px -12px rgba(0,0,0,.45)}
+.float{position:absolute;background:var(--w);border-radius:16px;padding:10px 14px;font-size:13px;font-weight:700;box-shadow:var(--sh);white-space:nowrap}
+@keyframes fl{50%{transform:translateY(-10px)}}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.fade{animation:up .45s ease both}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:99px;padding:13px 22px;font-weight:700;font-size:15px;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--o),var(--od));box-shadow:0 12px 24px -12px var(--o);text-decoration:none;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn.g{background:linear-gradient(135deg,#2F7D58,var(--g))}
+.btn.ol{background:var(--w);color:var(--o);box-shadow:none;border:1.5px solid var(--o)}
+.btn.sm{padding:8px 15px;font-size:13px}
+.card,.box{background:var(--w);border:1px solid var(--l);border-radius:22px;padding:18px;box-shadow:0 10px 26px -20px rgba(60,30,10,.35);transition:.25s;position:relative}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed var(--l)}
+.row:last-child{border:0}
+.price{font:700 24px var(--serif)}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:4px 9px;border-radius:99px;background:var(--gl);color:var(--g)}
+.tag.w{background:#FFF1C2;color:#7A5300}
+.demo{display:inline-block;font-size:11px;font-weight:800;padding:4px 9px;border-radius:8px;background:var(--y);color:#252525;vertical-align:middle}
+.vs{display:inline-block;width:14px;height:14px;border:1.5px solid var(--vc);border-radius:3px;position:relative;flex:none}
+.vs:after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--vc)}
+.kpi{font:700 30px var(--serif);color:var(--g)}
+.food{padding:0;overflow:hidden}
+.pic{height:156px;display:grid;place-items:center;position:relative;background:linear-gradient(135deg,var(--a),var(--b))}
+.pic:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.7),transparent 42%)}
+.pic span{position:relative;font-size:70px;filter:drop-shadow(0 12px 10px rgba(60,30,10,.28));transition:.4s}
+.food:hover .pic span{transform:scale(1.08) rotate(-3deg)}
+.off{position:absolute;right:12px;bottom:12px;background:var(--k);color:var(--w);font-size:12px;font-weight:700;font-style:normal;padding:5px 10px;border-radius:99px}
+.fb{padding:14px 16px 16px}
+.fb h3{font-size:18px;margin:8px 0 4px}
+.meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--m)}
+.add{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.chefc{display:flex;gap:14px}
+.av{width:58px;height:58px;border-radius:18px;flex:none;display:grid;place-items:center;color:#fff;font:700 20px var(--serif);background:linear-gradient(135deg,#2F7D58,#7CC49A)}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.cats{grid-template-columns:repeat(5,1fr)}}
+.cat{border:1px solid var(--l);border-radius:20px;padding:16px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;background:var(--bg);color:#252525;text-align:left;transition:.2s}
+.cat:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.cat span{font-size:32px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 16px;scrollbar-width:none}
+.chips button{flex:none;border:1px solid var(--l);background:var(--w);color:var(--k);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;cursor:pointer}
+.chips .on{background:var(--k);color:var(--w)}
+.in{width:100%;border:1px solid var(--l);background:var(--w);color:var(--k);border-radius:14px;padding:12px 14px;font-size:15px}
+.tools{display:grid;gap:10px;margin-bottom:18px}
+@media(min-width:600px){.tools{grid-template-columns:1fr 200px}}
+.form{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.form label{display:grid;gap:6px;font-size:13px;font-weight:700}
+.two{display:grid;gap:18px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+ol.st{list-style:none;padding:0;margin:14px 0 0;counter-reset:s}
+ol.st li{counter-increment:s;display:flex;gap:12px;margin-bottom:12px}
+ol.st li:before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--o);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.ic{font-size:30px;display:block;margin-bottom:8px}
+.stars{color:#F5A623}
+.quote{font:italic 18px var(--serif);margin:10px 0 14px}
+.hot{background:linear-gradient(160deg,#2F7D58,#1B4D36);color:#fff;border-color:transparent}
+.hot .muted,.hot ul{color:#D5EBDF}
+.ribbon{position:absolute;top:14px;right:14px;background:var(--y);color:#252525;font-size:11px;font-weight:800;padding:5px 10px;border-radius:99px}
+.plan{display:flex;flex-direction:column}
+.plan .price{font-size:34px;margin:8px 0 2px}
+.plan ul{margin:10px 0 16px;padding-left:18px;color:var(--m);font-size:14px;flex:1}
+.shop{display:grid;gap:20px}
+@media(min-width:900px){.shop{grid-template-columns:1.2fr .8fr;align-items:start}.sum{position:sticky;top:100px}}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:32px;height:32px;border-radius:50%;border:1px solid var(--l);background:var(--w);color:var(--k);cursor:pointer;font-weight:700}
+.tl{position:relative;padding-left:32px;margin-top:14px}
+.tl:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--l)}
+.tl div{position:relative;padding:10px 0;color:var(--m);font-weight:600}
+.tl div:before{content:"";position:absolute;left:-32px;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;background:var(--l);border:3px solid var(--w)}
+.tl .done{color:var(--k)}
+.tl .done:before{background:var(--g)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:10px 8px;border-bottom:1px solid var(--l);text-align:left}
+.modal{position:fixed;inset:0;background:rgba(20,14,8,.5);display:grid;place-items:center;padding:18px;z-index:40}
+.modal[hidden]{display:none}
+.sheet{background:var(--w);border-radius:24px;padding:24px;width:min(100%,380px);position:relative;box-shadow:var(--sh)}
+.sheet form{display:grid;gap:12px;margin-top:14px}
+.x{position:absolute;top:12px;right:12px;border:0;background:var(--gl);color:var(--k);width:32px;height:32px;border-radius:50%;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#252525;color:#fff;padding:12px 18px;border-radius:16px;font-size:14px;font-weight:600;box-shadow:0 18px 40px -16px #000;opacity:0;transition:.35s;pointer-events:none;z-index:50;max-width:90%}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{background:#252525;color:#D9D4CC;padding:44px 16px 24px;margin-top:60px}
+.fi{max-width:1200px;margin:auto;display:grid;gap:28px;grid-template-columns:1fr 1fr}
+@media(min-width:800px){.fi{grid-template-columns:2fr 1fr 1fr 1fr}}
+footer h4{font:700 17px var(--serif);color:#fff;margin:0 0 10px}
+footer a{display:block;color:#D9D4CC;text-decoration:none;font-size:14px;padding:3px 0}
+footer a:hover{color:var(--y)}
+.fb2{max-width:1200px;margin:26px auto 0;border-top:1px solid #3a3a3a;padding-top:16px;font-size:12px;color:#9c968e}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="bar">
+<a class="brand" href="#/home"><span class="logo">🍛</span>Bachelor<b>Bite</b></a>
+<nav class="menu"><a href="#/home">Home</a><a href="#/explore">Explore</a><a href="#/chefs">Home Chefs</a><a href="#/subscriptions">Subscriptions</a><a href="#/become-chef">Become a Chef</a><a href="#/about">About</a><a href="#/track">Orders</a><a href="#/chef">Chef Desk</a><a href="#/admin">Admin</a></nav>
+<select class="ctl" id="area" aria-label="Delivery area"></select>
+<button class="ctl" id="login" onclick="authBtn()">Log in</button>
+<a class="ctl" href="#/cart" aria-label="Cart">🛒 <b id="cc">0</b></a>
+</div></div>
+<main id="app"></main>
+<footer><div class="fi">
+<div><h4>BachelorBite</h4><p style="font-size:14px;max-width:26em">Ghar jaisa khana, har din. Homemade meals from verified local home chefs.</p><p style="margin-top:12px"><span class="demo">DEMO PROTOTYPE</span></p></div>
+<div><h4>Support</h4><a href="#/about">Contact us</a><a href="#/policies">Refund policy</a></div>
+<div><h4>Company</h4><a href="#/about">About us</a><a href="#/become-chef">Become a home chef</a><a href="#/policies">Terms and conditions</a><a href="#/policies">Privacy policy</a></div>
+<div><h4>Follow</h4><a href="#">Instagram</a><a href="#">Facebook</a></div>
+</div><div class="fb2">Chefs, meals and orders in this prototype are demo content. No real payments are taken and nothing is delivered.</div></footer>
+<div class="modal" id="modal" hidden><div class="sheet"><button class="x" onclick="$('#modal').hidden=true" aria-label="Close">✕</button><h3>Log in or register</h3><p class="muted" style="margin-top:6px">Demo only. No OTP is sent and no account is saved on a server.</p><form onsubmit="login(event)"><input class="in" id="ln" placeholder="Your name" required><input class="in" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="Mobile number" required><button class="btn" type="submit">Continue</button></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS={g(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},s(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},r(k){try{localStorage.removeItem(k)}catch(e){}}};
+const rupee=n=>'₹'+Number(n).toLocaleString('en-IN');
+const ini=n=>n.replace(/[’']/g,'').replace(/[^A-Za-z\s]/g,' ').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+const CATS=[['Daily Thali','🍛','#FFE6D3'],['North Indian','🥘','#FFF0C2'],['South Indian','🥞','#E8F4EC'],['Maharashtrian','🥣','#FFE9E1'],['Gujarati','🍲','#E7EFFF'],['Jain','🌿','#E8F6EC'],['Healthy','🥗','#EAF7E9'],['High Protein','💪','#FDE8EF'],['Breakfast','🍳','#FFF4D6'],['Dinner','🌙','#EEEAFB']];
+const AREAS=['Mulund','Powai','Andheri West','Bandra West','Borivali'];
+const STEPS=['Order placed','Chef accepted','Preparing','Ready for pickup','Out for delivery','Delivered'];
+const CHEFS=[
+{id:'c1',name:'Meera’s Ghar Ka Khana',spec:'Maharashtrian home cooking',areas:['Mulund','Powai'],rating:4.8,meals:1240},
+{id:'c2',name:'Iyer Aunty’s Kitchen',spec:'South Indian & breakfast',areas:['Powai','Andheri West'],rating:4.7,meals:860},
+{id:'c3',name:'Punjabi Rasoi',spec:'North Indian & high protein',areas:['Andheri West','Bandra West'],rating:4.6,meals:720},
+{id:'c4',name:'Jain & Gujarati Ghar',spec:'Jain, Gujarati & healthy',areas:['Borivali','Mulund'],rating:4.4,meals:300}];
+const FOODS=[
+{id:'f1',chef:'c1',name:'Maharashtrian Thali',price:120,veg:1,cats:['Daily Thali','Maharashtrian'],prep:30,rating:4.8,img:'🍛',t:['#FFD9BD','#FF9E5E']},
+{id:'f2',chef:'c1',name:'Kanda Poha + Chai',price:60,veg:1,cats:['Breakfast','Maharashtrian'],prep:15,rating:4.6,img:'🥣',t:['#FFF1B8','#FFD166']},
+{id:'f3',chef:'c2',name:'Idli Sambar (3 pcs)',price:80,veg:1,cats:['South Indian','Breakfast'],prep:15,rating:4.7,img:'🍚',t:['#E7F3EC','#9ED6B1']},
+{id:'f4',chef:'c2',name:'Masala Dosa',price:95,veg:1,cats:['South Indian','Breakfast'],prep:20,rating:4.7,img:'🥞',t:['#FFE9C7','#F5B65C']},
+{id:'f5',chef:'c2',name:'Sprouts Salad Bowl',price:90,veg:1,cats:['Healthy','High Protein'],prep:10,rating:4.3,img:'🥗',t:['#E4F5E0','#A8DCA0']},
+{id:'f6',chef:'c3',name:'Rajma Chawal',price:110,veg:1,cats:['North Indian','Dinner'],prep:25,rating:4.6,img:'🥘',t:['#FFE0D1','#F28C5C']},
+{id:'f7',chef:'c3',name:'Chicken Curry + 3 Roti',price:140,veg:0,cats:['High Protein','Dinner'],prep:40,rating:4.5,img:'🍗',t:['#FFE1CC','#E8743B']},
+{id:'f8',chef:'c4',name:'Jain Thali (no onion/garlic)',price:125,veg:1,cats:['Jain','Daily Thali'],prep:35,rating:4.4,img:'🍲',t:['#E6EEFF','#A7BFF5']},
+{id:'f9',chef:'c4',name:'Gujarati Thali',price:130,veg:1,cats:['Gujarati','Daily Thali'],prep:35,rating:4.5,img:'🍽️',t:['#EAF7E9','#8FCB9B']}];
+const PLANS=[['Trial',3,330,'Try 3 meals first'],['Weekly Lunch',6,660,'6 lunches a week'],['Weekly Lunch & Dinner',12,1320,'12 meals a week'],['Monthly Lunch',26,2860,'26 lunches a month'],['Monthly Lunch & Dinner',52,5720,'52 meals a month']];
+const SEED=[{id:'p1',name:'Asha’s Home Kitchen (demo)',area:'Borivali',cuisine:'Gujarati snacks',fssai:'',status:'pending'}];
+const DEF={commission:15,fee:8,delivery:40,tax:0};
+let S={cat:'All',veg:'all',q:'',chef:''};
+const settings=()=>({...DEF,...LS.g('bb_set',{})});
+const area=()=>LS.g('bb_area','Powai');
+const apps=()=>LS.g('bb_apps',SEED);
+const orders=()=>LS.g('bb_orders',[]);
+const cart=()=>LS.g('bb_cart',[]);
+const sold=()=>LS.g('bb_sold',{});
+const route=()=>location.hash.replace(/^#\/?/,'')||'home';
+const allChefs=()=>[...CHEFS,...apps().filter(a=>a.status==='approved').map(a=>({id:a.id,name:a.name,spec:a.cuisine,areas:[a.area],rating:0,meals:0}))];
+const liveChefs=()=>allChefs().filter(c=>c.areas.includes(area()));
+const foodsHere=()=>{const ids=liveChefs().map(c=>c.id);return FOODS.filter(f=>ids.includes(f.chef))};
+const sec=(e,h,b)=>`<section class="fade"><div class="eb">${e}</div><h2>${h}</h2>${b}</section>`;
+
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t.h);t.h=setTimeout(()=>t.classList.remove('show'),2200)}
+function badge(){$('#cc').textContent=cart().reduce((s,l)=>s+l.qty,0)}
+function markNav(){document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#/'+route()))}
+function totals(c){const st=settings(),sub=c.reduce((s,l)=>s+l.price*l.qty,0),on=c.length>0,fee=on?st.fee:0,del=on?st.delivery:0,tax=Math.round((sub+fee+del)*st.tax/100);return{sub,fee,del,tax,total:sub+fee+del+tax}}
+function setLoc(v){const a=AREAS.find(x=>x.toLowerCase()===String(v).trim().toLowerCase());if(a){LS.s('bb_area',a);toast('Showing chefs in '+a);render()}else toast('We don’t deliver there yet. Pick an area from the list.')}
+function goCat(n){S.cat=n;S.chef='';location.hash='#/explore'}
+function viewMenu(id){S.chef=id;S.cat='All';location.hash='#/explore'}
+function addItem(id){const f=FOODS.find(x=>x.id===id);let c=cart(),msg=f.name+' added';if(c.length&&c[0].chef!==f.chef){c=[];msg='Cart replaced: one order, one kitchen'}const l=c.find(x=>x.id===id);if(l)l.qty++;else c.push({id:id,name:f.name,price:f.price,chef:f.chef,qty:1});LS.s('bb_cart',c);badge();toast(msg)}
+function chg(i,d){const c=cart();c[i].qty+=d;LS.s('bb_cart',c.filter(l=>l.qty>0));badge();cartView()}
+function authBtn(){if(LS.g('bb_user',null)){LS.r('bb_user');toast('Logged out');render()}else $('#modal').hidden=false}
+function login(e){e.preventDefault();LS.s('bb_user',$('#ln').value.trim()||'Guest');$('#modal').hidden=true;toast('Welcome to BachelorBite');render()}
+
+const foodCard=f=>{const c=allChefs().find(x=>x.id===f.chef),off=sold()[f.id];return `<article class="card food"><div class="pic" style="--a:${f.t[0]};--b:${f.t[1]}"><span>${f.img}</span>${off?'<em class="off">Sold out</em>':''}</div><div class="fb"><div class="meta"><i class="vs" style="--vc:${f.veg?'#1E8E3E':'#B42318'}"></i>${f.veg?'Veg':'Non-veg'} · ⭐ ${f.rating} · ${f.prep} min</div><h3>${esc(f.name)}</h3><div class="muted">${esc(c?c.name:'')}</div><div class="add"><span class="price">${rupee(f.price)}</span>${off?'<button class="btn sm" disabled>Unavailable</button>':`<button class="btn sm" onclick="addItem('${f.id}')">Add +</button>`}</div></div></article>`};
+const chefCard=c=>`<article class="card chefc"><div class="av">${ini(c.name)}</div><div style="min-width:0"><h3 style="font-size:18px">${esc(c.name)}</h3><span class="tag" style="margin:6px 0;display:inline-block">✔ Verified</span><div class="muted">${esc(c.spec)}</div><div class="muted" style="margin-top:4px">${c.rating?'⭐ '+c.rating+' · '+c.meals+' meals served':'New chef'} · ${c.areas.map(a=>esc(a)).join(', ')}</div><button class="btn sm" style="margin-top:12px" onclick="viewMenu('${c.id}')">View menu</button></div></article>`;
+
+function home(){
+const today=foodsHere().slice(0,3),topC=liveChefs().slice(0,3);
+$('#app').innerHTML=`<section class="hero fade"><div>
+<div class="eb">Homemade · Verified · Fresh daily</div>
+<h1>Missing <em>Ghar Ka Khana</em>?</h1>
+<p class="lead">Discover delicious homemade meals prepared by local home chefs. Fresh, affordable and delivered to your doorstep.</p>
+<form class="find" onsubmit="event.preventDefault();setLoc(this.loc.value)"><input name="loc" list="areas" placeholder="Enter your delivery location" aria-label="Delivery location"><datalist id="areas">${AREAS.map(a=>`<option value="${a}">`).join('')}</datalist><button class="btn sm" type="submit">Check</button></form>
+<div class="ctas" style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="#/explore">Explore homemade food</a><a class="btn ol" href="#/become-chef">Become a home chef</a></div>
+<div class="stats"><div><b>4.6★</b><span>Average chef rating (demo)</span></div><div><b>5 areas</b><span>Mumbai pilot</span></div><div><b>₹110</b><span>Per meal on plans</span></div></div>
+</div>
+<div class="visual" aria-hidden="true"><div class="plate"></div>
+<div class="bowl" style="left:50%;top:50%;width:40%;transform:translate(-50%,-50%);background:radial-gradient(circle at 35% 30%,#FFE2B8,#F9A35E)">🍛</div>
+<div class="bowl" style="left:5%;top:7%;width:30%;background:radial-gradient(circle at 35% 30%,#FFF3C4,#FFD166)">🥘</div>
+<div class="bowl" style="left:65%;top:7%;width:30%;background:radial-gradient(circle at 35% 30%,#E4F5E9,#8FCB9B)">🥗</div>
+<div class="bowl" style="left:5%;top:63%;width:30%;background:radial-gradient(circle at 35% 30%,#fff,#EDE3D4)">🍚</div>
+<div class="bowl" style="left:65%;top:63%;width:30%;background:radial-gradient(circle at 35% 30%,#FFE1D2,#F28C5C)">🍲</div>
+<div class="float" style="right:-4px;top:6%">✔ Verified home chefs</div>
+<div class="float" style="left:-4px;bottom:8%">⭐ Made fresh today</div>
+</div></section>
+${sec('Today in '+esc(area()),'Today’s homemade meals','<div class="grid">'+(today.length?today.map(foodCard).join(''):'<div class="box muted">No verified chefs deliver here yet.</div>')+'</div>')}
+${sec('Browse','Popular categories','<div class="cats">'+CATS.map(c=>`<button class="cat" style="--bg:${c[2]}" onclick="goCat('${c[0]}')"><span>${c[1]}</span><b>${c[0]}</b></button>`).join('')+'</div>')}
+${sec('Featured','Featured home chefs','<div class="grid">'+(topC.length?topC.map(chefCard).join(''):'<div class="box muted">No chefs deliver here yet.</div>')+'</div>')}
+<section class="two"><div class="card"><div class="eb">For customers</div><ol class="st"><li>Enter your location</li><li>Discover nearby home chefs</li><li>Pick your favourite homemade meal</li><li>Place your order</li><li>Enjoy homemade food</li></ol></div><div class="card"><div class="eb">For home chefs</div><ol class="st"><li>Register</li><li>Complete verification</li><li>Upload your menu</li><li>Receive orders</li><li>Earn money</li></ol></div></section>
+<section class="card hot" style="padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:linear-gradient(120deg,#276749,#2F7D58 55%,#F47B35)"><div><div class="eb" style="color:#FFE7A8">Subscriptions</div><h2 style="color:#fff;font-size:clamp(26px,4vw,34px)">Your everyday food, sorted!</h2><p style="opacity:.92">Lunch and dinner plans from ₹110 per meal.</p></div><a class="btn" style="background:#fff;color:#252525;box-shadow:none" href="#/subscriptions">See plans</a></section>
+${sec('Why BachelorBite','Built for people far from home','<div class="grid"><div class="card"><span class="ic">✔</span><h3>Verified home chefs</h3><p class="muted">Only admin-approved chefs show a verified badge.</p></div><div class="card"><span class="ic">🥘</span><h3>Fresh homemade meals</h3><p class="muted">Cooked to order by local kitchens.</p></div><div class="card"><span class="ic">₹</span><h3>Affordable pricing</h3><p class="muted">Plans from ₹110 per meal (sample pricing).</p></div><div class="card"><span class="ic">🔁</span><h3>Flexible subscriptions</h3><p class="muted">Pause, skip, resume or renew.</p></div></div>')}
+${sec('Customers','What people say <span class="demo">DEMO CONTENT</span>','<div class="grid"><article class="card"><div class="stars">★★★★★</div><p class="quote">“Tastes like the food my mother cooks. Dal and roti, every day.”</p><div class="muted">Aarav, PG resident (demo)</div></article><article class="card"><div class="stars">★★★★★</div><p class="quote">“Lunch and dinner plans, delivered on time and well packed.”</p><div class="muted">Neha, working professional (demo)</div></article></div>')}`;
+}
+
+function explore(){
+const ch=S.chef&&allChefs().find(c=>c.id===S.chef);
+$('#app').innerHTML=sec('Explore','Meals in '+esc(area()),
+(ch?`<div class="box" style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap"><span>Menu from <b>${esc(ch.name)}</b></span><button class="btn sm ol" onclick="S.chef='';render()">Show all</button></div>`:'')+
+`<div class="chips">${['All',...CATS.map(c=>c[0])].map(c=>`<button class="${S.cat===c?'on':''}" onclick="S.cat='${c}';render()">${c}</button>`).join('')}</div>
+<div class="tools"><input class="in" placeholder="Search dal, dosa, thali…" value="${esc(S.q)}" oninput="S.q=this.value;renderGrid()"><select class="in" id="v" onchange="S.veg=this.value;renderGrid()"><option value="all">All</option><option value="veg">Veg only</option><option value="nonveg">Non-veg</option></select></div>
+<div class="grid" id="grid"></div>`);
+$('#v').value=S.veg;renderGrid();
+}
+function renderGrid(){const q=S.q.toLowerCase(),list=foodsHere().filter(f=>(!S.chef||f.chef===S.chef)&&(S.cat==='All'||f.cats.includes(S.cat))&&(S.veg==='all'||(S.veg==='veg')===!!f.veg)&&f.name.toLowerCase().includes(q));$('#grid').innerHTML=list.length?list.map(foodCard).join(''):'<div class="box muted" style="grid-column:1/-1">Nothing matches here. Try another category, clear the filters or choose another area.</div>'}
+
+function chefs(){const ch=liveChefs();$('#app').innerHTML=sec('Find chefs','Home chefs in '+esc(area()),'<p class="muted" style="margin-bottom:20px">Only admin-approved chefs show a verified badge, and only chefs who deliver to your area are listed.</p><div class="grid">'+(ch.length?ch.map(chefCard).join(''):'<div class="box muted">No verified chefs deliver here yet. <a href="#/become-chef">Apply to cook</a> or choose another area.</div>')+'</div>')}
+
+function subs(){const my=LS.g('bb_subs',[]),today=new Date().toISOString().slice(0,10);
+$('#app').innerHTML=sec('Meal subscriptions','Your everyday food, sorted!','<p class="muted">Every plan works out to ₹110 per meal. Plan prices are configurable by the admin. Demo only: no payment is taken.</p><div style="margin:18px 0 22px"><label style="font-weight:700;font-size:14px">Start date <input class="in" type="date" id="sd" value="'+today+'" style="width:auto;margin-left:8px"></label></div><div class="grid">'+PLANS.map((p,i)=>`<article class="card plan ${i===2?'hot':''}">${i===2?'<span class="ribbon">Most popular</span>':''}<h3>${p[0]}</h3><div class="muted">${p[1]} meals</div><div class="price">${rupee(p[2])}</div><div class="muted">${rupee(Math.round(p[2]/p[1]))} per meal</div><ul><li>${p[3]}</li><li>Pause, skip or resume</li></ul><button class="btn sm ${i===2?'ol':''}" onclick="subscribe(${i})">Subscribe</button></article>`).join('')+'<article class="card plan" style="background:linear-gradient(160deg,#FFF1C2,#FFE3CC)"><h3>Custom meal plan</h3><div class="muted">Your meals, your schedule</div><div class="price" style="font-size:26px">Let’s talk</div><ul><li>Corporate or PG tie-ups</li><li>Special diets</li></ul><button class="btn sm ol" onclick="toast(\'Request noted (demo)\')">Request a plan</button></article></div><h2 style="font-size:26px;margin-top:42px">My demo plans</h2>'+(my.length?my.map((s,i)=>`<div class="card" style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><b>${esc(s.plan)}</b> · starts ${esc(s.start)}<div class="muted">Remaining: <b>${s.left}</b> of ${s.total} meals</div></div><button class="btn sm" onclick="useMeal(${i})" ${s.left<1?'disabled':''}>Use a meal</button></div>`).join(''):'<div class="box muted">No demo plans yet. Subscribe above to try the flow.</div>'))}
+function subscribe(i){const p=PLANS[i],my=LS.g('bb_subs',[]);my.push({plan:p[0],total:p[1],left:p[1],start:$('#sd').value||new Date().toISOString().slice(0,10)});LS.s('bb_subs',my);toast('Demo plan saved. No payment taken.');subs()}
+function useMeal(i){const my=LS.g('bb_subs',[]);if(my[i]&&my[i].left>0){my[i].left--;LS.s('bb_subs',my);subs()}}
+
+function becomeChef(){$('#app').innerHTML=`<section class="fade two"><div><div class="eb">Earn with BachelorBite</div><h2>Turn your cooking skills into income!</h2><p class="muted" style="font-size:16px">Homemakers and independent cooks can sell homemade meals here. You can’t sell until an admin approves your application and documents.</p><ol class="st"><li>Register and tell us about your kitchen</li><li>Complete verification (FSSAI and ID)</li><li>Upload your menu and set availability</li><li>Receive orders and track earnings</li><li>Get paid through a licensed payment partner</li></ol></div>
+<form class="box form" style="grid-template-columns:1fr" onsubmit="applyChef(event)">
+<label>Full name<input class="in" id="an" required></label>
+<label>Kitchen area<select class="in" id="aa">${AREAS.map(a=>`<option>${a}</option>`).join('')}</select></label>
+<label>Cuisines<input class="in" id="ac" required placeholder="e.g. Gujarati, Jain"></label>
+<label>FSSAI licence number <span class="muted">(needed before selling)</span><input class="in" id="af" placeholder="14 digits"></label>
+<button class="btn" type="submit" style="justify-self:start">Submit application</button>
+<p class="muted">Phone, bank details and document uploads are not collected in this prototype. The live version handles them securely.</p></form></section>`}
+function applyChef(e){e.preventDefault();const l=apps();l.push({id:'a'+Date.now(),name:$('#an').value.trim(),area:$('#aa').value,cuisine:$('#ac').value.trim(),fssai:$('#af').value.trim(),status:'pending'});LS.s('bb_apps',l);toast('Application received. Pending admin verification.');location.hash='#/home'}
+
+function about(){$('#app').innerHTML=`<section class="fade two"><div><div class="eb">About us</div><h2>Ghar jaisa khana, har din.</h2><p class="muted" style="font-size:16px">BachelorBite connects people living away from home (students, bachelors, working professionals, PG residents and families) with verified home chefs who cook fresh, affordable and hygienic meals. It also helps homemakers and independent cooks earn from their kitchens.</p></div><div class="card"><div class="eb">Contact</div><h3 style="margin:8px 0 12px">We’d love to hear from you</h3><p class="muted">Email, phone and WhatsApp details go here before launch.</p></div></section>`}
+
+function cartView(){const c=cart(),t=totals(c);
+$('#app').innerHTML=sec('Cart & checkout','Your order',c.length?`<div class="shop"><div>${c.map((l,i)=>`<div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap"><div><b>${esc(l.name)}</b><div class="muted">${rupee(l.price)} each</div></div><div class="qty"><button onclick="chg(${i},-1)" aria-label="Less">−</button><b>${l.qty}</b><button onclick="chg(${i},1)" aria-label="More">+</button><span class="price" style="font-size:20px;margin-left:8px">${rupee(l.price*l.qty)}</span></div></div>`).join('')}
+<form class="box" style="display:grid;gap:14px;margin-top:18px" onsubmit="placeOrder(event)"><h3>Delivery details</h3><div class="form"><label>Name<input class="in" id="cn" required></label><label>Mobile<input class="in" inputmode="numeric" pattern="[6-9][0-9]{9}" required></label><label>Area<input class="in" value="${esc(area())}" disabled></label></div><button class="btn g" type="submit" style="justify-self:start">Place demo order</button><p class="muted">No payment is taken. The live version uses Razorpay test mode and verifies payments on the server.</p></form></div>
+<aside class="card sum"><h3>Order summary</h3><div class="row"><span>Subtotal</span><b>${rupee(t.sub)}</b></div><div class="row"><span>Platform fee</span><b>${rupee(t.fee)}</b></div><div class="row"><span>Delivery (estimate)</span><b>${rupee(t.del)}</b></div><div class="row"><span>Tax</span><b>${rupee(t.tax)}</b></div><div class="row" style="padding-top:14px"><b>Total</b><span class="price">${rupee(t.total)}</span></div></aside></div>`:'<div class="box muted">Your cart is empty. <a href="#/explore">Browse homemade meals</a></div>')}
+function placeOrder(e){e.preventDefault();const c=cart();if(!c.length)return;const t=totals(c),o={id:'BB'+Math.floor(100000+Math.random()*900000),chef:c[0].chef,items:c.map(l=>({name:l.name,qty:l.qty})),...t,status:STEPS[0],area:area(),created:new Date().toLocaleString('en-IN')};const l=orders();l.push(o);LS.s('bb_orders',l);LS.s('bb_cart',[]);LS.s('bb_last',o.id);badge();toast('Demo order placed. No payment taken.');location.hash='#/track'}
+
+function track(){const l=orders(),o=l.find(x=>x.id===LS.g('bb_last',''))||l[l.length-1];
+if(!o){$('#app').innerHTML=sec('Orders','Track your order','<div class="box muted">No orders yet. <a href="#/explore">Explore homemade meals</a></div>');return}
+const i=STEPS.indexOf(o.status),rej=o.status.startsWith('Rejected');
+$('#app').innerHTML=sec('Order '+o.id,rej?'Order declined':'On its way',`<p class="muted">${esc(o.created)} · ${esc(o.area)} · ${o.items.map(x=>esc(x.name)+' × '+x.qty).join(', ')}</p><div class="shop" style="margin-top:22px"><div class="card">${rej?'<p>The chef declined this order. The live version starts an automatic refund here.</p>':`<div class="tl">${STEPS.map((s,k)=>`<div class="${k<=i?'done':''}">${s}</div>`).join('')}</div>`}<button class="btn sm ol" style="margin-top:14px" onclick="track()">Refresh status</button></div><aside class="card sum"><h3>Summary</h3><div class="row"><span>Items</span><b>${rupee(o.sub)}</b></div><div class="row"><span>Fees and tax</span><b>${rupee(o.total-o.sub)}</b></div><div class="row"><span>Total (demo, no payment)</span><b>${rupee(o.total)}</b></div></aside></div>`)}
+
+function chefDash(){const sel=LS.g('bb_sel','c1'),all=allChefs(),me=all.find(c=>c.id===sel)||all[0],cm=settings().commission;
+const mine=orders().filter(o=>o.chef===me.id).reverse(),open=mine.filter(o=>o.status!=='Delivered'&&!o.status.startsWith('Rejected'));
+const earned=mine.filter(o=>o.status==='Delivered').reduce((s,o)=>s+o.sub,0),prog=open.reduce((s,o)=>s+o.sub,0);
+const nx={'Order placed':[['Chef accepted','Accept'],['Rejected by chef','Decline']],'Chef accepted':[['Preparing','Start preparing']],'Preparing':[['Ready for pickup','Mark ready']]};
+$('#app').innerHTML=sec('Chef dashboard <span class="demo">DEMO VIEW</span>','Hi, '+esc(me.name),
+`<select class="in" style="max-width:340px;margin-bottom:18px" onchange="LS.s('bb_sel',this.value);render()">${all.map(c=>`<option value="${c.id}" ${c.id===me.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select>
+<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin-bottom:26px"><div class="card"><div class="muted">Total orders</div><div class="kpi">${mine.length}</div></div><div class="card"><div class="muted">Pending orders</div><div class="kpi">${open.length}</div></div><div class="card"><div class="muted">Earned (after ${cm}% commission)</div><div class="kpi">${rupee(Math.round(earned*(100-cm)/100))}</div></div><div class="card"><div class="muted">In progress (after commission)</div><div class="kpi">${rupee(Math.round(prog*(100-cm)/100))}</div></div></div>
+<h3 style="margin-bottom:12px">Orders</h3>${mine.length?mine.map(o=>`<div class="card" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>${o.id}</b><span class="tag">${o.status}</span></div><div class="muted" style="margin:6px 0">${o.items.map(x=>esc(x.name)+' × '+x.qty).join(', ')} · ${rupee(o.sub)}</div><div style="display:flex;gap:8px;flex-wrap:wrap">${(nx[o.status]||[]).map(([s,l])=>`<button class="btn sm ${/Decline/.test(l)?'ol':''}" onclick="setStatus('${o.id}','${s}')">${l}</button>`).join('')}</div></div>`).join(''):'<div class="box muted">No orders for this kitchen yet. Place a demo order from Explore first.</div>'}
+<h3 style="margin:26px 0 12px">Menu availability</h3><div class="box">${FOODS.filter(f=>f.chef===me.id).map(f=>`<div class="row"><span>${esc(f.name)}</span><button class="btn sm ${sold()[f.id]?'':'ol'}" onclick="toggleSold('${f.id}')">${sold()[f.id]?'Mark available':'Mark sold out'}</button></div>`).join('')||'<span class="muted">No menu items yet. Menu editing comes in the live version.</span>'}</div>`)}
+function setStatus(id,s){const l=orders(),o=l.find(x=>x.id===id);if(o){o.status=s;LS.s('bb_orders',l)}render()}
+function toggleSold(id){const s=sold();s[id]=!s[id];LS.s('bb_sold',s);render()}
+
+function admin(){const st=settings(),l=orders(),live=l.filter(o=>!o.status.startsWith('Rejected')),gmv=live.reduce((s,o)=>s+o.sub,0),pend=apps().filter(a=>a.status==='pending');
+$('#app').innerHTML=sec('Admin <span class="demo">DEMO VIEW · NO LOGIN</span>','Operations',
+`<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">${[['Approved chefs',allChefs().length],['Pending applications',pend.length],['Live orders',live.length],['GMV (food)',rupee(gmv)],['Commission',rupee(Math.round(gmv*st.commission/100))],['Customer fees',rupee(live.length*st.fee)]].map(([k,v])=>`<div class="card"><div class="muted">${k}</div><div class="kpi">${v}</div></div>`).join('')}</div>
+<h3 style="margin:30px 0 12px">Pending chef applications</h3>${pend.length?pend.map(a=>`<div class="card" style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><b>${esc(a.name)}</b> <span class="tag w">Pending</span><div class="muted">${esc(a.area)} · ${esc(a.cuisine)} · FSSAI: ${esc(a.fssai||'not provided')}</div></div><div style="display:flex;gap:8px"><button class="btn sm" onclick="decide('${a.id}','approved')">Approve</button><button class="btn sm ol" onclick="decide('${a.id}','rejected')">Reject</button></div></div>`).join(''):'<div class="box muted">No pending applications.</div>'}
+<h3 style="margin:30px 0 12px">Orders</h3><div class="box" style="overflow-x:auto"><table><tr><th>ID</th><th>Status</th><th>Total</th><th></th></tr>${l.slice().reverse().map(o=>`<tr><td>${o.id}</td><td>${o.status}</td><td>${rupee(o.total)}</td><td>${o.status==='Ready for pickup'?`<button class="btn sm" onclick="setStatus('${o.id}','Out for delivery')">Dispatch</button>`:o.status==='Out for delivery'?`<button class="btn sm" onclick="setStatus('${o.id}','Delivered')">Mark delivered</button>`:''}</td></tr>`).join('')||'<tr><td colspan="4" class="muted">No orders yet.</td></tr>'}</table></div>
+<h3 style="margin:30px 0 12px">Settings</h3><form class="box form" onsubmit="saveSet(event)">${[['commission','Commission %'],['fee','Customer platform fee ₹'],['delivery','Delivery estimate ₹'],['tax','Tax % (confirm with CA)']].map(([k,t])=>`<label>${t}<input class="in" type="number" min="0" step="0.5" id="s_${k}" value="${st[k]}"></label>`).join('')}<div style="grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" type="submit">Save settings</button><button class="btn sm ol" type="button" onclick="resetDemo()">Reset demo data</button></div></form>`)}
+function decide(id,s){const a=apps(),x=a.find(y=>y.id===id);if(x){x.status=s;LS.s('bb_apps',a);toast((s==='approved'?'Approved: ':'Rejected: ')+x.name)}render()}
+function saveSet(e){e.preventDefault();const s={};['commission','fee','delivery','tax'].forEach(k=>s[k]=Math.max(0,parseFloat($('#s_'+k).value)||0));LS.s('bb_set',s);toast('Settings saved');render()}
+function resetDemo(){['bb_cart','bb_orders','bb_apps','bb_subs','bb_sold','bb_set','bb_last','bb_sel'].forEach(k=>LS.r(k));badge();toast('Demo data reset');render()}
+
+function policies(){$('#app').innerHTML=sec('Legal','Policies <span class="demo">PLACEHOLDER</span>','<div class="box"><h3>Terms and conditions</h3><p class="muted" style="margin:6px 0 16px">Draft needed: ordering, chef responsibilities, cancellations and liability. Review with a lawyer.</p><h3>Privacy policy</h3><p class="muted" style="margin:6px 0 16px">Draft needed: what is collected, why, and how users request deletion.</p><h3>Refund policy</h3><p class="muted" style="margin-top:6px">Draft needed: refunds for rejected, late or wrong orders, and timelines.</p></div>')}
+
+const VIEWS={home,explore,chefs,subscriptions:subs,'become-chef':becomeChef,about,cart:cartView,track,chef:chefDash,admin,policies};
+function render(){(VIEWS[route()]||home)();markNav();badge();const u=LS.g('bb_user',null);$('#login').textContent=u?'Hi, '+String(u).split(' ')[0]:'Log in'}
+function initArea(){const s=$('#area');s.innerHTML=AREAS.map(a=>`<option ${a===area()?'selected':''}>${a}</option>`).join('');s.onchange=e=>{LS.s('bb_area',e.target.value);render()}}
+initArea();
+addEventListener('hashchange',render);
+render();
+</script>
+</body>
+</html>
